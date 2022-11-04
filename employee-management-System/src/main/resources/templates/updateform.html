@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http:/www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+<title>Updating Employee</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" 
+integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" 
+crossorigin="anonymous">
+</head>
+<body>
+<div align="center" class="container my-2">
+<h1>Updating Employee Detail</h1>
+<form action=# th:action="@{/saveEmployee}" th:objective="@{employee}" class="form-control" Method="post">
+  <input type="text" th:field="*(fname)" class="form-control"><br>
+
+  <input type="text" th:field="*(lname)" class="form-control"><br>
+  
+  <input type="email" th:field="*(email)"class="form-control"><br>
+  <input type="submit" class="btn btn-Danger"  Value="submit">
+</form>
+</div>
+</body>
+</html>
