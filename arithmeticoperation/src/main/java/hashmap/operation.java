@@ -30,8 +30,27 @@ public class operation {
 	int c= a*b;
 		return "The multiplication of two number is :"+c;
 	}
+	@GetMapping("/subraction/{a},{b}")
+	public String subraction(@PathVariable(value="a") int a,@PathVariable(value="b")int b)
+	{
+	int c= a-b;
+		return "The subraction of two number is :"+c;
+	}
+	@GetMapping("/Division/{a},{b}")
+	public String Division(@PathVariable(value="a") int a,@PathVariable(value="b")int b)
+	{
+	int c= a/b;
+		return "The Division of two number is :"+c;
+	}
+	@GetMapping("/Modulus/{a},{b}")
+	public String Modulus(@PathVariable(value="a") int a,@PathVariable(value="b")int b)
+	{
+	int c= a%b;
+		return "The Modulus of two number is :"+c;
+	}
+	
 	@GetMapping("/fact/{n}")
-	public String sum(@PathVariable(value="n") int n)
+	public String fact(@PathVariable(value="n") int n)
 	{
 		int a=n;
 		int fact=1;
@@ -43,7 +62,7 @@ public class operation {
     		 a--;
 	
 		}
-		return "The sum of two number is :"+fact;
+		return "The Factorial of Given number is :"+fact;
 	}
 
 	}

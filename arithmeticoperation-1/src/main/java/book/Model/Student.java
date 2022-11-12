@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class Student {
 	@Id
 	@Column
-	@GeneratedValue(strategy=GenerationType.AUTO)
+
 	private long studentid;
 	private String name;
 	private String Department;

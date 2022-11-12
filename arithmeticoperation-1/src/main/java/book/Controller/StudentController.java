@@ -20,33 +20,33 @@ public class StudentController {
 	@Autowired  
 	StudentService studentService;  
 	//creating a get mapping that retrieves all the books detail from the database   
-	@GetMapping("/student")  
-	private List<Student> getAllStudents()   
+	@GetMapping("/student")
+	public List<Student> getAllStudents()   
 	{  
 	return studentService.getAllStudents();  
 	}  
 	//creating a get mapping that retrieves the detail of a specific student  
 	@GetMapping("/student/{studentid}")  
-	private Student getstudents(@PathVariable("studentid") long studentid)   
+	public Student getstudents(@PathVariable("studentid") long studentid)   
 	{  
 	return studentService.getStudentById(studentid);  
 	}  
 	//creating a delete mapping that deletes a specified student  
 	@DeleteMapping("/student/{studentid}")  
-	private void deletestudent(@PathVariable("studentid") long studentid)   
+	public void deletestudent(@PathVariable("studentid") long studentid)   
 	{  
 	studentService.deletestudent(studentid);  
 	}  
 	//creating post mapping that post the book detail in the database  
 	@PostMapping("/students")  
-	private Student savestudent(@RequestBody Student students)   
+	public Student savestudent(@RequestBody Student students)   
 	{  
      return studentService.savestudent(students);  
 
 	}  
 	//creating put mapping that updates the student detail   
 	@PutMapping("/students/{studentid}")  
-	private Student update(@PathVariable("studentid") long studentid,@RequestBody Student students)   
+	public Student update(@PathVariable("studentid") long studentid,@RequestBody Student students)   
  	{  
 	return studentService.update(studentid,students);  
 	}  
