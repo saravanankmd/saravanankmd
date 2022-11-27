@@ -1,12 +1,14 @@
 package book.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 import org.hibernate.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import book.Exception.AlreadyExistingException;
 import book.Model.Student;
 import book.Repository.StudentRepository;
 @Service
@@ -31,6 +33,14 @@ public void deletestudent(long studentid)
 
 public Student savestudent(Student students)
 {
+	long id=students.getStudentid();
+
+	Optional<Student> opt=studentRepository.findById(id);
+	if(opt.isPresent())
+	{
+		throw new AlreadyExistingException("Data is Already Existing");
+	}
+	
 return studentRepository.save(students);
 }
 
